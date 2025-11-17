@@ -11,6 +11,7 @@ const HeroSection = () => {
                     <MiniSlider />
                     <MiniSlider2 />
                 </div>
+
             </div>
         </div>
     );

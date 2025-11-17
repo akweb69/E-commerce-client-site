@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 const MiniSlider = () => {
     const sliders = [
-        "https://i.ibb.co/CKYZJBtD/Orange-and-Yellow-Countdown-Sale-Facebook-Post.png",
-        "https://i.ibb.co/fYyw1YWV/1000803746.png",
+
+
         "https://i.ibb.co/v6rsMRfH/1000803700.png",
-        "https://i.ibb.co/MxTKb0wM/1000803665.png"
+
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
