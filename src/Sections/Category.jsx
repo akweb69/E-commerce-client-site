@@ -20,8 +20,8 @@ const Category = () => {
     ];
 
     return (
-        <div className="py-8 px-4 bg-gray-50">
-            <div className="max-w-7xl mx-auto">
+        <div className="py-8">
+            <div className=" mx-auto">
                 {/* Section Title */}
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-800">
                     জনপ্রিয় ক্যাটাগরি
