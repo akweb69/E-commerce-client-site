@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
 import ProductModal from "./ProductModal";
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
+
+    const navigate = useNavigate()
     const [selectedSize, setSelectedSize] = useState(null);
     const [showModal, setShowModal] = useState(false);
 
@@ -12,13 +15,19 @@ const ProductCard = ({ product }) => {
     const currentSize = selectedSize || p.sizes?.[0];
     const displayPrice = p.isSizeAvailable ? currentSize?.price : p.price;
 
+    const openDetailsPage = () => {
+        navigate(`/product/${product._id}`);
+    }
+
     return (
         <>
             <div className="group relative color-bg-1 rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden ">
 
                 {/* Image + Info */}
                 <div className="p-4">
-                    <img src={p.image} className="w-full h-48 " />
+                    <img
+                        onClick={openDetailsPage}
+                        src={p.image} className="w-full h-48 " />
 
                     <h3 className="font-semibold mt-2">{p.name}</h3>
 

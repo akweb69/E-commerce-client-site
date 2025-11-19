@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const navLinks = ['Home', 'Courses', 'About', 'Blog', 'Contact'];
 
@@ -40,21 +41,22 @@ const Header = () => {
                         transition={{ duration: 0.4 }}
                         className="flex-shrink-0"
                     >
-                        <span className="text-2xl font-bold color-t">LOGO</span>
+                        <Link to="/" className="text-2xl font-bold color-t">
+                            TK Atar Bazar
+                        </Link>
                     </motion.div>
 
                     {/* RIGHT – DESKTOP NAV */}
                     <div className="hidden md:flex items-center space-x-6">
                         <nav className="flex items-center space-x-5">
                             {navLinks.map(l => (
-                                <motion.a
+                                <motion.div
                                     key={l}
-                                    href="#"
                                     whileHover={{ scale: 1.05 }}
                                     className="color-t hover:opacity-80 transition"
                                 >
-                                    {l}
-                                </motion.a>
+                                    <Link to={`/${l === 'Home' ? '' : l.toLowerCase()}`}>{l}</Link>
+                                </motion.div>
                             ))}
                         </nav>
 
@@ -73,7 +75,7 @@ const Header = () => {
                             transition={{ delay: 0.3 }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="color-2 px-4 py-2 rounded text-sm font-semibold color-t"
+                            className="color-2 px-4 py-2 rounded cursor-pointer text-sm font-semibold color-t"
                         >
                             Sign Up
                         </motion.button>
@@ -110,14 +112,13 @@ const Header = () => {
                         >
                             <div className="pb-4 space-y-3">
                                 {navLinks.map(l => (
-                                    <motion.a
+                                    <motion.div
                                         key={l}
                                         variants={itemVariants}
-                                        href="#"
                                         className="block color-t hover:opacity-80"
                                     >
-                                        {l}
-                                    </motion.a>
+                                        <Link to={`/${l === 'Home' ? '' : l.toLowerCase()}`}>{l}</Link>
+                                    </motion.div>
                                 ))}
 
                                 <motion.input
