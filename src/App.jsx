@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePageLayout from './Layout/HomePageLayout';
 import HomePage from './Layout/HomePage';
 import ProductDetailsPage from './Pages/ProductDetailsPage';
+import NotFound404 from './Common/NotFound404';
 
 function App() {
 
@@ -18,15 +19,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetailsPage />} />
         </Route>
 
-
-        {/* admin route */}
-        {/* <Route path="/admin" element={<HomePageLayout />}> */}
-        {/* index => shows up by default when url is "/" */}
-        {/* <Route index element={<HomePage />} /> */}
-        {/* <Route path="/product/:id" element={<ProductDetailsPage />} /> */}
-        {/* </Route> */}
-
-        {/* guest route */}
+        {/* Not Found 404 Page */}
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </Router>
   );
