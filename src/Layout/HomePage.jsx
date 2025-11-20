@@ -1,3 +1,4 @@
+import Loader from "../Common/Loader";
 import Category from "../Sections/Category";
 import HeroSection from "../Sections/HeroSection";
 import ProductSection from "../Sections/ProductSection";
@@ -8,6 +9,7 @@ const HomePage = () => {
             <HeroSection />
             <Category />
             <ProductSection />
+            <Loader />
         </div>
     );
 };
