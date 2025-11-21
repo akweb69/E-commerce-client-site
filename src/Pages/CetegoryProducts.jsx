@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import Category from './../Sections/Category';
 
 const CetegoryProducts = () => {
     const params = useParams();
