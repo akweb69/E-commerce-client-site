@@ -4,6 +4,7 @@ import HomePageLayout from './Layout/HomePageLayout';
 import HomePage from './Layout/HomePage';
 import ProductDetailsPage from './Pages/ProductDetailsPage';
 import NotFound404 from './Common/NotFound404';
+import CetegoryProducts from './Pages/CetegoryProducts';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           {/* index => shows up by default when url is "/" */}
           <Route index element={<HomePage />} />
           <Route path="/product/:id" element={<ProductDetailsPage />} />
+          <Route path="/category/:category" element={<CetegoryProducts />} />
         </Route>
 
         {/* Not Found 404 Page */}

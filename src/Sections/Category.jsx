@@ -4,6 +4,7 @@ import {
     FaGamepad, FaCamera, FaHome, FaHeart
 } from 'react-icons/fa';
 import { GiLipstick, GiRunningShoe } from 'react-icons/gi';
+import { useNavigate } from 'react-router-dom';
 
 const Category = () => {
     const data = [
@@ -18,7 +19,11 @@ const Category = () => {
         { _id: 9, name: 'হোম & লিভিং', icon: FaHome, color: 'bg-teal-500' },
         { _id: 10, name: 'হেলথ', icon: FaHeart, color: 'bg-emerald-500' },
     ];
-
+    const navigate = useNavigate();
+    // handle navigation--->
+    const handleNavigation = (path) => {
+        navigate(`/category/${path}`);
+    }
     return (
         <div className="py-8">
             <div className=" mx-auto">
@@ -33,10 +38,13 @@ const Category = () => {
                         const Icon = item.icon;
                         return (
                             <div
+
                                 key={item._id}
                                 className="group cursor-pointer transform transition-all duration-300 hover:scale-110"
                             >
-                                <div className="flex flex-col items-center space-y-2">
+                                <div
+                                    onClick={() => handleNavigation(item.name)}
+                                    className="flex flex-col items-center space-y-2">
                                     {/* Icon Circle */}
                                     <div
                                         className={`${item.color} p-4 md:p-5 rounded-full shadow-lg group-hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2`}
