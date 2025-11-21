@@ -6,6 +6,7 @@ import ProductDetailsPage from './Pages/ProductDetailsPage';
 import NotFound404 from './Common/NotFound404';
 import CetegoryProducts from './Pages/CetegoryProducts';
 import LoginForm from './Forms/LoginForm';
+import Layout from './Admin/Layout/Layout';
 
 function App() {
 
@@ -21,6 +22,11 @@ function App() {
           <Route path="/product/:id" element={<ProductDetailsPage />} />
           <Route path="/category/:category" element={<CetegoryProducts />} />
           <Route path="/signIn" element={<LoginForm />} />
+        </Route>
+        {/* admin routes */}
+        <Route path="/admin" element={<HomePageLayout />}>
+          <Route index element={<Layout />} />
+
         </Route>
 
         {/* Not Found 404 Page */}
